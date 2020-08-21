@@ -44,7 +44,7 @@ jobs:
         git config --global user.name "Gavin Suddrey"
 
     - name: Pull Documentation
-      run: git clone https://${{secrets.USERNAME}}:${{secrets.API_KEY}}@github.com/suddrey-qut/suddrey-qut.github.io.git
+      run: git clone https://${{secrets.USERNAME}}:${{secrets.API_KEY}}@github.com/suddrey-qut/suddrey-qut.github.io.git site
 
     - name: Prepare resources
       run: |
