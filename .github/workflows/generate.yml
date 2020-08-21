@@ -43,6 +43,7 @@ jobs:
 
     - name: Prepare resources
       run: |
+        pip install wheel
         pip install -r requirements.txt
         if [ "${{ github.event.inputs.path }}" != "" ]; then \
           ./init-repo ${{ github.event.inputs.path }} ${{ github.event.inputs.remote }} ${{ github.event.inputs.commit }}; \
