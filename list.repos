@@ -1,0 +1,9 @@
+repositories:
+  resources/manipulation/manipulation_driver:
+    type: git
+    url: https://github.com/roboticvisionorg/rv_manipulation_driver.git
+    version: master
+  resources/manipulation/panda_driver:
+    type: git
+    url: https://github.com/roboticvisionorg/rv_panda_driver.git
+    version: master

@@ -1,0 +1,10 @@
+site_name: ACRV
+site_url: https://roboticvisionorg.github.io/
+theme:
+  name: null
+  custom_dir: 'cinder'
+  favicon: images/favicon.ico
+  logo: images/logo.png
+repo_url: https://github.com/roboticvisionorg/
+edit_uri: ''
+google_analytics: ['UA-157261045-1', 'auto']

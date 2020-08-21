@@ -16,7 +16,7 @@ on:
         description: 'The location in the resources heirarchy to add the remote repository'
         required: true
       commit:
-        description: 'The commit has to import/build'
+        description: 'The branch/commit to import/build'
         required: false
         default: master
 
@@ -45,7 +45,7 @@ jobs:
       run: |
         pip install -r requirements.txt
         if [ "${{ github.event.inputs.path }}" != "" ]; then \
-          ./init ${{ github.event.inputs.remote }} ${{ github.event.inputs.path }} ${{ github.event.inputs.commit }}; \
+          ./init-repo ${{ github.event.inputs.path }} ${{ github.event.inputs.remote }} ${{ github.event.inputs.commit }}; \
         fi
         vcs import < list.repos
         ./setup
