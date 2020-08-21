@@ -7,3 +7,7 @@ repositories:
     type: git
     url: https://github.com/roboticvisionorg/rv_panda_driver.git
     version: master
+  resources/test/gavin:
+    type: git
+    url: https://github.com/suddrey-qut/lib.git
+    version: master
