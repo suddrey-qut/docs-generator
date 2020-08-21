@@ -62,12 +62,15 @@ jobs:
     - name: Pull Documentation
       run: git clone https://${{secrets.USERNAME}}:${{secrets.API_KEY}}@github.com/suddrey-qut/suddrey-qut.github.io.git site
 
-    - name: Prepare resources
+    - name: Prepare Resources
       run: |
         if [ "${{ github.event.inputs.path }}" != "" ]; then \
-          ./init-repo ${{ github.event.inputs.path }} ${{ github.event.inputs.remote }} ${{ github.event.inputs.commit }}; \
+          ./init-repo ${{ github.event.inputs.path }} ${{ github.event.inputs.remote }} ${{ github.event.inputs.commit }} && \
+          vcs import < list.repos && \
+          git add list.repos && git commit -m 'Automatically generated update' && git push; \
+        else
+          vcs import < list.repos && \
         fi
-        vcs import < list.repos
         ./setup
 
     - name: Build Documentation
@@ -78,3 +81,8 @@ jobs:
       run: |
         cd site
         git add . && git commit -m 'Automatically generated update' && git push
+
+    - name: 'Save Resources'
+      run: |
+        cd ..
+        
