@@ -69,7 +69,7 @@ jobs:
           vcs import < list.repos && \
           git add list.repos && git commit -m 'Automatically generated update' && git push; \
         else
-          vcs import < list.repos && \
+          vcs import < list.repos; \
         fi
         ./setup
 
