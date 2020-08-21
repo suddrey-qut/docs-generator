@@ -21,7 +21,7 @@ if resp.status_code != 200:
   print('Unknown repository')
 
 data['repositories']['resources/{}'.format(args.path)] = {
-  'url': args.remote, 
+  'url': 'https://github.com/{}.git'.format(args.remote), 
   'version': args.version,
   'type': 'git'
 }
